@@ -320,33 +320,33 @@
                                 <h3 class="widget_title">Galeria</h3>
                                 <div class="sidebar-gallery">
                                     <div class="gallery-thumb">
-                                        <img src="assets/img/widget/insta-feed1.png" alt="Imagem da Galeria">
-                                        <a href="assets/img/widget/insta-feed1.png" class="gallery-btn popup-image"><i
+                                        <img src="assets/img/widget/insta-feed1.webp" alt="Imagem da Galeria">
+                                        <a href="assets/img/widget/insta-feed1.webp" class="gallery-btn popup-image"><i
                                                 class="fab fa-instagram"></i></a>
                                     </div>
                                     <div class="gallery-thumb">
-                                        <img src="assets/img/widget/insta-feed2.png" alt="Imagem da Galeria">
-                                        <a href="assets/img/widget/insta-feed2.png" class="gallery-btn popup-image"><i
+                                        <img src="assets/img/widget/insta-feed2.webp" alt="Imagem da Galeria">
+                                        <a href="assets/img/widget/insta-feed2.webp" class="gallery-btn popup-image"><i
                                                 class="fab fa-instagram"></i></a>
                                     </div>
                                     <div class="gallery-thumb">
-                                        <img src="assets/img/widget/insta-feed3.png" alt="Imagem da Galeria">
-                                        <a href="assets/img/widget/insta-feed3.png" class="gallery-btn popup-image"><i
+                                        <img src="assets/img/widget/insta-feed3.webp" alt="Imagem da Galeria">
+                                        <a href="assets/img/widget/insta-feed3.webp" class="gallery-btn popup-image"><i
                                                 class="fab fa-instagram"></i></a>
                                     </div>
                                     <div class="gallery-thumb">
-                                        <img src="assets/img/widget/insta-feed4.png" alt="Imagem da Galeria">
-                                        <a href="assets/img/widget/insta-feed4.png" class="gallery-btn popup-image"><i
+                                        <img src="assets/img/widget/insta-feed4.webp" alt="Imagem da Galeria">
+                                        <a href="assets/img/widget/insta-feed4.webp" class="gallery-btn popup-image"><i
                                                 class="fab fa-instagram"></i></a>
                                     </div>
                                     <div class="gallery-thumb">
-                                        <img src="assets/img/widget/insta-feed5.png" alt="Imagem da Galeria">
-                                        <a href="assets/img/widget/insta-feed5.png" class="gallery-btn popup-image"><i
+                                        <img src="assets/img/widget/insta-feed5.webp" alt="Imagem da Galeria">
+                                        <a href="assets/img/widget/insta-feed5.webp" class="gallery-btn popup-image"><i
                                                 class="fab fa-instagram"></i></a>
                                     </div>
                                     <div class="gallery-thumb">
-                                        <img src="assets/img/widget/insta-feed6.png" alt="Imagem da Galeria">
-                                        <a href="assets/img/widget/insta-feed6.png" class="gallery-btn popup-image"><i
+                                        <img src="assets/img/widget/insta-feed6.webp" alt="Imagem da Galeria">
+                                        <a href="assets/img/widget/insta-feed6.webp" class="gallery-btn popup-image"><i
                                                 class="fab fa-instagram"></i></a>
                                     </div>
                                 </div>

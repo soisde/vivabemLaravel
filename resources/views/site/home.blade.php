@@ -958,7 +958,7 @@
         <div class="video-area-1">
             <div class="container">
                 <div class="video-wrap">
-                    <a data-bg-src="assets/img/normal/video-bg1.png" href="https://www.youtube.com/watch?v=P7fi4hP_y80"
+                    <a data-bg-src="assets/img/normal/2.jpeg" href="https://www.youtube.com/watch?v=P7fi4hP_y80"
                         class="play-btn popup-video">
                         <i class="fa-sharp fa-solid fa-play"></i>
                     </a>
@@ -1047,7 +1047,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="wcu-thumb2">
-                                <img src="assets/img/normal/wcu_2-1.png" alt="img">
+                                <img src="assets/img/normal/wcu_2-11.webp" alt="img">
                             </div>
                             <div class="wcu-grid2 mt-4" data-bg-src="assets/img/bg/wcu_box-bg.png">
                                 <div class="details">
@@ -1067,7 +1067,7 @@
                                 </div>
                             </div>
                             <div class="wcu-thumb2">
-                                <img src="assets/img/normal/wcu_2-2.png" alt="img">
+                                <img src="assets/img/normal/wcu_2-2.webp" alt="img">
                             </div>
                         </div>
                     </div>
@@ -1321,10 +1321,10 @@
             <div class="col-lg-6 order-lg-2">
                 <div class="goal-thumb-2 mb-40 mb-lg-0">
                     <div class="img-1">
-                        <img src="assets/img/normal/goal_2-2.png" alt="img">
+                        <img src="assets/img/normal/goal_2-2.webp" alt="img">
                     </div>
                     <div class="img-2 jump">
-                        <img src="assets/img/normal/goal_2-1.png" alt="img">
+                        <img src="assets/img/normal/goal_2-1.webp" alt="img">
                     </div>
                     <div class="wcu-grid movingX">
                         <div class="icon">
@@ -1376,7 +1376,7 @@
 <!--==============================
     Área de Chamada para Ação (CTA)
 ==============================-->
-<section class="cta-area space" data-bg-src="assets/img/bg/cta-bg1.png">
+<section class="cta-area space" data-bg-src="assets/img/bg/cta-bg1.webp">
     <div class="container">
         <div class="row justify-content-lg-end justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-10">
@@ -1424,7 +1424,7 @@
             <div class="col-xl-8 col-lg-7 col-md-6">
                 <div class="blog-card style2">
                     <div class="blog-img">
-                        <img src="assets/img/blog/blog_2_1.png" alt="imagem do blog">
+                        <img src="assets/img/blog/blog_2_1.webp" alt="imagem do blog">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
