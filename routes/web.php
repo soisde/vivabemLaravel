@@ -3,7 +3,8 @@
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModalidadeController;
-use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\MusculacaoController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\TreinoController;
 use Illuminate\Support\Facades\Route;
@@ -19,26 +20,54 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 // Route::get('/', function () {
-//     return view('welcome');
+    // return view('home');
 // });
 
-// Rota para a página "Home"
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Rota para a página "Sobre"
+Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
+
 Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 
-// Rota para a página "Modalidade"
-Route::get('/modalidade', [ModalidadeController::class, 'index'])->name('modalidade');
 
-// Rota para a página "Notícias"
-Route::get('/noticias', [NoticiasController::class, 'index'])->name('noticias');
+// Route::get('/noticia', [NoticiaController::class, 'index'])->name('noticia');
 
-// Rota para a página "Treino"
+
 Route::get('/treino', [TreinoController::class, 'index'])->name('treino');
 
-// Rota para a página "Contato"
+
+
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
+Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
 
+Route::post('/contato/enviarNew', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
+
+
+
+
+Route::get('/modalidade', [ModalidadeController::class, 'index'])->name('modalidade');
+
+Route::get('/modalidade/musculacao', [ModalidadeController::class, 'musculacao'])->name('modalidade.musculacao');
+
+Route::get('/modalidade/treinofuncional', [ModalidadeController::class, 'treinofuncional'])->name('modalidade.treinofuncional');
+
+Route::get('/modalidade/meditacao', [ModalidadeController::class, 'meditacao'])->name('modalidade.meditacao');
+
+Route::get('/modalidade/boxe', [ModalidadeController::class, 'boxe'])->name('modalidade.boxe');
+
+Route::get('/modalidade/yoga', [ModalidadeController::class, 'yoga'])->name('modalidade.yoga');
+
+// Route::get('/modalidade/musculacao', [MusculacaoController::class, 'musculacao'])->name('musculacao');
+
+route::get('/noticia', [NoticiaController::class, 'index'])->name('noticia');
+
+// Route::get('/noticia', [NoticiaController::class'index'])->name('noticia');
+
+
+// Route::get('/sobre', 'SobreController@index');
+// Route::get('/modalidade', 'ModalidadeController@index');
+// Route::get('/treino', 'TreinoController@index');
+// Route::get('/contato', 'ContatoController@index');

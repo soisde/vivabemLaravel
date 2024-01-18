@@ -1,4 +1,7 @@
-@extends('layout.layout')
+
+
+
+ @extends('layout.layout')
 
 @section('tile', 'Sobre')
 
@@ -25,22 +28,9 @@
     <!--==============================
     Breadcumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/my/sobre2.png">
-        <!-- bg animated image/ -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcumb-content">
-                        <h1 class="breadcumb-title">Sobre nos</h1>
-                        <ul class="breadcumb-menu">
-                            <li><a href="{{ route('home') }}">HOME</a></li>
-                            <li class="active">SOBRE</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="breadcumb-wrapper background-image" style=" background-image: url(assets/img/bg/breadcrumb-bg.png);
+}" data-bg-src="assets/img/bg/breadcrumb-bg.png">
 
-        </div>
     </div>
 
     <!--==============================
@@ -51,8 +41,8 @@
         <div class="row">
             <div class="col-lg-6 order-lg-2 text-lg-end">
                 <div class="about-thumb mb-5 mb-lg-0">
-                    <img class="about-img-1" src="assets/img/my/sobre3.png" alt="img">
-                    <img class="about-img-2 jump" src="assets/img/my/sobre3.1.png" alt="img">
+                    <img class="about-img-1" src="assets/img/normal/about_1-1.png" alt="img">
+                    <img class="about-img-2 jump" src="assets/img/normal/about_1-2.png" alt="img">
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">
@@ -74,19 +64,19 @@
                                     <div class="about-tab-icon">
                                         <img src="assets/img/icon/about-icon.svg" alt="img">
                                     </div>
-                                    <p class="about-tab-text">As academias desempenham um papel vital na promoção de um estilo de vida ativo e saudável. Elas oferecem um ambiente de apoio e motivador para que as pessoas se envolvam em atividades físicas regulares.</p>
+                                    <p class="about-tab-text">Proporcionar um ambiente inspirador e acolhedor, promovendo a saúde e o bem-estar através de programas de exercícios inovadores, instrução de alta qualidade e uma comunidade que apoia todos os estágios da jornada fitness.</p>
                                 </div>
                                 <div class="filter-item cat2">
                                     <div class="about-tab-icon">
                                         <img src="assets/img/icon/about-icon.svg" alt="img">
                                     </div>
-                                    <p class="about-tab-text">As academias desempenham um papel vital na promoção de um estilo de vida ativo e saudável. Elas oferecem um ambiente de apoio e motivador para que as pessoas se envolvam em atividades físicas regulares.</p>
+                                    <p class="about-tab-text">Ser reconhecida como a academia líder na promoção de estilos de vida saudáveis, oferecendo instalações modernas, programas diversificados e uma abordagem personalizada para atender às necessidades exclusivas de cada membro.</p>
                                 </div>
                                 <div class="filter-item cat3">
                                     <div class="about-tab-icon">
                                         <img src="assets/img/icon/about-icon.svg" alt="img">
                                     </div>
-                                    <p class="about-tab-text">As academias desempenham um papel vital na promoção de um estilo de vida ativo e saudável. Elas oferecem um ambiente de apoio e motivador para que as pessoas se envolvam em atividades físicas regulares.</p>
+                                    <p class="about-tab-text">Uma academia visa promover a saúde e o bem-estar, proporcionando um ambiente inspirador com instalações modernas e programas variados de exercícios. Além de incentivar a prática regular de atividades físicas, a academia busca criar uma comunidade unida e oferecer serviços profissionais que atendam às diferentes necessidades dos membros, contribuindo para melhorar a qualidade de vida e alcançar metas de fitness individuais.</p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +87,7 @@
                             <div class="icon"><i class="fas fa-phone-volume"></i></div>
                             <div class="details">
                                 <p class="about-info-title">Precisa de Ajuda?</p>
-                                <a class="about-info-link" href="tel:+25825692582">(+258) 2569 2582</a>
+                                <a class="about-info-link" href="tel:+55 11999999999">+55 (11) 999999999</a>
                             </div>
                         </div>
                     </div>
@@ -120,7 +110,59 @@
     </div>
     <div class="container">
         <div class="row global-carousel service-slider-2 slider-shadow" data-slide-show="3" data-ml-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-sm-slide-show="1" data-xs-slide-show="1" data-dots="false">
+            {{-- <div class="col-lg-4 col-md-6">
+                <div class="service-card style2">
+                    <div class="service-card_icon">
+                        <img src="assets/img/icon/service-icon_2-1.svg" alt="img">
+                    </div>
+                    <div class="service-card_content">
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/musculacao') }}>Aula de Fitness na Academia</a></h4>
+                        <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
+                            curtos períodos de recuperação...</p>
+                        <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                    </div>
+                </div>
+            </div> --}}
             <div class="col-lg-4 col-md-6">
+                <div class="service-card style2">
+                    <div class="service-card_icon">
+                        <img src="assets/img/icon/service-icon_2-6.svg" alt="img">
+                    </div>
+                    <div class="service-card_content">
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/meditacao') }}>Aula de Meditação</a></h4>
+                        <p class="service-card_text">Treinos de alta intensidade alternando entre períodos intensos de exercício e
+                            curtos períodos de recuperação...</p>
+                        <a href={{ url('modalidade/meditacao') }} class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card style2">
+                    <div class="service-card_icon">
+                        <img src="assets/img/icon/service-icon_2-2.svg" alt="img">
+                    </div>
+                    <div class="service-card_content">
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/meditacao') }}>Levantamento de Peso</a></h4>
+                        <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
+                            curtos períodos de recuperação...</p>
+                        <a href={{ url('modalidade/meditacao') }} class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card style2">
+                    <div class="service-card_icon">
+                        <img src="assets/img/icon/service-icon_2-3.svg" alt="img">
+                    </div>
+                    <div class="service-card_content">
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/musculacao') }}>Musculação</a></h4>
+                        <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
+                            curtos períodos de recuperação...</p>
+                        <a href={{ url('modalidade/musculacao') }} class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-lg-4 col-md-6">
                 <div class="service-card style2">
                     <div class="service-card_icon">
                         <img src="assets/img/icon/service-icon_2-1.svg" alt="img">
@@ -132,43 +174,17 @@
                         <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-lg-4 col-md-6">
                 <div class="service-card style2">
                     <div class="service-card_icon">
-                        <img src="assets/img/icon/service-icon_2-2.svg" alt="img">
+                        <img src="assets/img/icon/service-icon_2-6.svg" alt="img">
                     </div>
                     <div class="service-card_content">
-                        <h4 class="service-card_title h5"><a href="service-details.html">Levantamento de Peso</a></h4>
-                        <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/musculacao') }}>Aula de Meditação</a></h4>
+                        <p class="service-card_text">Treinos de alta intensidade alternando entre períodos intensos de exercício e
                             curtos períodos de recuperação...</p>
-                        <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card style2">
-                    <div class="service-card_icon">
-                        <img src="assets/img/icon/service-icon_2-3.svg" alt="img">
-                    </div>
-                    <div class="service-card_content">
-                        <h4 class="service-card_title h5"><a href="service-details.html">Musculação</a></h4>
-                        <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
-                            curtos períodos de recuperação...</p>
-                        <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card style2">
-                    <div class="service-card_icon">
-                        <img src="assets/img/icon/service-icon_2-1.svg" alt="img">
-                    </div>
-                    <div class="service-card_content">
-                        <h4 class="service-card_title h5"><a href="service-details.html">Aula de Fitness na Academia</a></h4>
-                        <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
-                            curtos períodos de recuperação...</p>
-                        <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                        <a href={{ url('modalidade/musculacao') }} class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
                     </div>
                 </div>
             </div>
@@ -178,10 +194,10 @@
                         <img src="assets/img/icon/service-icon_2-2.svg" alt="img">
                     </div>
                     <div class="service-card_content">
-                        <h4 class="service-card_title h5"><a href="service-details.html">Levantamento de Peso</a></h4>
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/musculacao') }}>Levantamento de Peso</a></h4>
                         <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
                             curtos períodos de recuperação...</p>
-                        <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                        <a href={{ url('modalidade/musculacao') }} class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
                     </div>
                 </div>
             </div>
@@ -191,10 +207,10 @@
                         <img src="assets/img/icon/service-icon_2-3.svg" alt="img">
                     </div>
                     <div class="service-card_content">
-                        <h4 class="service-card_title h5"><a href="service-details.html">Musculação</a></h4>
+                        <h4 class="service-card_title h5"><a href={{ url('modalidade/musculacao') }}>Musculação</a></h4>
                         <p class="service-card_text">Treinos de alta intensidade alternando entre explosões intensas de exercício e
                             curtos períodos de recuperação...</p>
-                        <a href="service-details.html" class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                        <a href={{ url('modalidade/musculacao') }} class="link-btn" tabindex="0"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
                     </div>
                 </div>
             </div>
@@ -222,7 +238,7 @@
                             <div class="icon"><i class="fas fa-phone-volume"></i></div>
                             <div class="details">
                                 <p class="about-info-title text-white">Precisa de Ajuda?</p>
-                                <a class="about-info-link" href="tel:+25825692582">(+258) 2569 2582</a>
+                                <a class="about-info-link" href="tel:+55 11999999999">+55 (11) 999999999</a>
                             </div>
                         </div>
                     </div>
@@ -391,3 +407,5 @@
 
 </html>
 @endsection
+
+
