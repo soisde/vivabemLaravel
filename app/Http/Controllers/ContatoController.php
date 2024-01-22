@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ContatoController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('site.contato');
     }
 
-    public function salvarNoBanco(Request $request){
+    public function salvarNoBanco(Request $request)
+    {
 
         $dados = $request->json()->all();
 
@@ -29,17 +31,23 @@ class ContatoController extends Controller
             'assuntoContato' => 'required|max:100',
             'mensContato' => 'required',
 
-        ])->validate();
+        ]);
 
-        $contato = Contato::create($validarDados);
+        if ($validarDados->fails()) {
+            return response()->json(['errors' => $validarDados->errors()], 422);
+        } else {
 
-        // por email
+            $contato = Contato::create($validarDados->validate());
 
-        Mail::to('cybercompany@smpsistema.com')->send(new ContatoEmail($contato));
+            // por email
 
-        return response()->json(['sucess' => 'Email registrado com sucesso!']);
+            Mail::to('cybercompany@smpsistema.com')->send(new ContatoEmail($contato));
 
-
+            return response()->json(['success' => 'Email registrado com sucesso!']);
+        }
     }
 
+    public function salvarEmail($request)
+    {
+    }
 }

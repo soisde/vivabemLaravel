@@ -99,10 +99,7 @@
                                         <input type="text" class="form-control style-white" name="nomeContato"
                                             id="nomeContato" placeholder="Seu Nome" value="{{ old('nomeContato') }}">
                                         <i class="far fa-user"></i>
-                                        @error('nomeContato')
-                                            <div class="error">{{ $mensagem }}</div>
-                                        @enderror
-
+                                        <div id="nomeContato" class="error-mensagem"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -111,9 +108,7 @@
                                             id="emailContato" placeholder="Endereço de E-mail"
                                             value="{{ old('emailContato') }}">
                                         <i class="far fa-envelope"></i>
-                                        @error('emailContato')
-                                            <div class="error">{{ $mensagem }}</div>
-                                        @enderror
+                                        <div id="emailContato" class="error-mensagem"></div>
                                     </div>
                                 </div>
                             </div>
@@ -126,15 +121,11 @@
                                     <option value="three">Aula de Meditação</option>
                                     <option value="four">Aula de Boxe</option>
                                 </select>
-                                @error('assuntoContato')
-                                    <div class="error">{{ $mensagem }}</div>
-                                @enderror
+                                <div id="assuntoContato" class="error-mensagem"></div>
                             </div>
                             <div class="form-group col-12">
                                 <textarea placeholder="Digite Sua Mensagem" name="mensContato" id="mensContato" class="form-control style-white">{{ old('mensContato') }}</textarea>
-                                @error('mensContato')
-                                    <div class="error">{{ $mensagem }}</div>
-                                @enderror
+                               <div id="mensagemContato" class="error-mensagem"></div>
                             </div>
 
                             <div class="form-btn col-12">

@@ -70,14 +70,24 @@ function showAlert(mensagem, targetElementId, timeout = 3000) {
     messageDiv.innerHTML = mensagem;
     messageDiv.classList.remove('msgContato');
 
-    setTimeout(function() {
+    setTimeout(function () {
         messageDiv.classList.add('msgContato');
     }, timeout);
 }
 
+function displayError(erros) {
+    let todosOsErros = "";
 
+    for (const [key, value] of Object.entries(erros)) {
+        todosOsErros += `<div class="alert alert-danger">${value.join(", ")}</divi>`;
+    }
 
-document.getElementById('formContato').addEventListener('submit', function(e) {
+    if (todosOsErros) {
+        showAlert(todosOsErros, "contatoMensagem");
+    }
+}
+
+document.getElementById('formContato').addEventListener('submit', function (e) {
     e.preventDefault();
 
     var data = {
@@ -96,24 +106,31 @@ document.getElementById('formContato').addEventListener('submit', function(e) {
         },
         body: JSON.stringify(data)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro na resposta do servidor');
-        }
-        return response.json();
-    })
-    .then(data => {
-        showAlert(`<div class="alert alert-success">${data.success}</div>`, 'contatoMensagem');
-        document.getElementById('formContato').reset();
-    })
-    .catch(errorResponse => {
-        errorResponse.json().then(errorData => {
-            if (errorData.errors) {
-                let errorMessages = Object.values(errorData.errors).map(error => `<div class="alert alert-danger">${error}</div>`).join('');
-                showAlert(errorMessages, 'contatoMensagem');
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errorData => {
+                    throw errorData;
+                })
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                showAlert(`<div class="alert alert-success">${data.success}</div>`, 'contatoMensagem');
+                document.getElementById('formContato').reset();
+            }
+            else {
+                showAlert(`<div class="alert alert-success">Erro ao enviar email.</div>`, "contatoMensagem")
+            }
+        })
+        .catch(error => {
+            if (error.errors) {
+                displayError(error.errors);
+            } else {
+                console.log("Erro desconhecido", error);
             }
         });
-    });
+
 });
 
 
