@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContatoEmail;
 use App\Models\Contato;
+use App\Models\newLetter;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -37,7 +38,7 @@ class ContatoController extends Controller
             return response()->json(['errors' => $validarDados->errors()], 422);
         } else {
 
-            $contato = Contato::create($validarDados->validate());
+            $contato = Contato::create($validarDados->validated());
 
             // por email
 
@@ -47,7 +48,22 @@ class ContatoController extends Controller
         }
     }
 
-    public function salvarEmail($request)
+    public function salvarEmail(Request $request)
     {
+        $dados = $request->json()->all();
+
+        $validarDados = Validator::make($dados, [
+            'emailContato' => 'required|email|max:100',
+        ]);
+
+        if ($validarDados->fails()) {
+            return response()->json(['errors' => $validarDados->errors()], 422);
+        } else {
+
+            newLetter::create($validarDados->validated());
+
+            // por email
+            return response()->json(['success' => 'Email registrado com sucesso!']);
+        }
     }
 }

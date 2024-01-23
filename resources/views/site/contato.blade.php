@@ -129,7 +129,7 @@
                             </div>
 
                             <div class="form-btn col-12">
-                                <button type="submit" class="btn">Enviar Mensagem</button>
+                                <button type="submit" class="btn" onclick="formContato(event)">Enviar Mensagem</button>
 
                                 {{-- <input value="Enviar email" class="btn"> --}}
                                 <div id="contatoMensagem" class="msgContato"></div>

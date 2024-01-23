@@ -300,12 +300,14 @@
                         <div class="widget footer-widget">
                             <h3 class="widget_title">Receba a Newsletter</h3>
                             <p class="footer-text">Receba 10% de desconto em seu primeiro pedido! Corra</p>
-                            <form class="newsletter-form">
+                            <form action="{{ route('contato.enviarnew') }}"  method="POST" id="formEmail" class="newsletter-form">
                                 <div class="form-group">
                                     <i class="far fa-envelope"></i>
-                                    <input class="form-control" type="email" placeholder="Endereço de E-mail" required="">
+                                    <input class="form-control" type="email" name="emailContato" id="emailContato"  value="{{ old('emailContato') }}" placeholder="Endereço de E-mail" required="">
+                                    <div id="emailContatoErro" class="error-mensagem"></div>
                                 </div>
-                                <button type="submit" class="btn style-r0 style2">Inscrever-se</button>
+                                <button type="submit" class="btn style-r0 style2" onclick="formEmail(event)">Inscrever-se</button>
+                                <div id="contatoMensagem" class="msgContato"></div>
                             </form>
                         </div>
                     </div>

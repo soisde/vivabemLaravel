@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class newLetter extends Model
 {
     use HasFactory;
+
+    protected $table = 'new_letters';
+
+    protected $fillable = ['emailContato'];
 }

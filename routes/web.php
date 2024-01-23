@@ -43,7 +43,7 @@ Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
 
-Route::post('/contato/enviarNew', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
+Route::post('/contato/enviarnew', [ContatoController::class, 'salvarEmail'])->name('contato.enviarnew');
 
 
 

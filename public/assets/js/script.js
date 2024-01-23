@@ -87,8 +87,9 @@ function displayError(erros) {
     }
 }
 
-document.getElementById('formContato').addEventListener('submit', function (e) {
+function formContato(e){
     e.preventDefault();
+    e.stopPropagation();
 
     var data = {
         nomeContato: document.getElementById('nomeContato').value,
@@ -131,6 +132,51 @@ document.getElementById('formContato').addEventListener('submit', function (e) {
             }
         });
 
-});
+    }
+
+//document.getElementById('formContato').addEventListener('submit', function (e) {
+    //e.preventDefault();
+
+    function formEmail(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        var data = {
+            emailContato: document.getElementById('emailContato').value,
+        };
 
 
+        fetch('/contato/enviarnew', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorData => {
+                        throw errorData;
+                    })
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    showAlert(`<div class="alert alert-success">${data.success}</div>`, 'contatoMensagem');
+                    document.getElementById('formEmail').reset();
+                }
+                else {
+                    showAlert(`<div class="alert alert-success">Erro ao enviar email.</div>`, "contatoMensagem")
+                }
+            })
+            .catch(error => {
+                if (error.errors) {
+                    displayError(error.errors);
+                } else {
+                    console.log("Erro desconhecido", error);
+                }
+            });
+
+        }
