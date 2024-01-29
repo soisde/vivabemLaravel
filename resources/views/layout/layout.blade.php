@@ -212,6 +212,9 @@
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-button">
+                                <a href={{ url('/login') }} class="btn style2 style-r0 d-xl-block d-none">
+                                    Login
+                                </a>
                                 <a href={{ url('/contato') }} class="btn style2 style-r0 d-xl-block d-none">
                                     Obter um Orçamento
                                 </a>

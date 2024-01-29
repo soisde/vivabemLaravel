@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\ModalidadeController;
 use App\Http\Controllers\MusculacaoController;
 use App\Http\Controllers\NoticiaController;
@@ -66,6 +67,14 @@ route::get('/noticia', [NoticiaController::class, 'index'])->name('noticia');
 
 // Route::get('/noticia', [NoticiaController::class'index'])->name('noticia');
 
+// Login
+route::get('/login', [LoginController::class, 'index'])->name('login');
+route::post('/login', [LoginController::class, 'autenticar'])->name('login');
+
+// DASH
+//route::get('/dasboard/alunos', [AlunoController::class, 'index'])->name('dasboard.alunos');
+//route::get('/dasboard/administrativo', [Administrativo::class, 'index'])->name('dasboard.administrativo');
+//route::get('/dasboard/instrutor', [Instrutor::class, 'index'])->name('dasboard.instrutor');
 
 // Route::get('/sobre', 'SobreController@index');
 // Route::get('/modalidade', 'ModalidadeController@index');
