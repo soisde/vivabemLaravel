@@ -9,7 +9,7 @@
 <br>
 <br>
 
-<h1>Instrutor</h1>
+<h1>Adiministraor</h1>
 
 <a href="{{ route('sair') }}" class="btn btn-danger">SAIR</a>
 @endsection

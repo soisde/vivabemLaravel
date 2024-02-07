@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email', 255)->unique();
             $table->string('senha', 255);
             $table->integer('tipo_usuario_id');
-            $table->enum('tipo_usuario_type', ['admin', 'aluno', 'funcionario']); //Ajuste com os tipos reais
+            $table->enum('tipo_usuario_type', ['aluno', 'funcionario']); //Ajuste com os tipos reais
             $table->timestamp('email_verificado_em')->nullable();
             $table->string('token_lembrete', 100)->nullable();
             $table->timestamps(); // Isso criará colunas 'criado_em' e 'atualizado_em' com o valor padrão sendo o timestamp atual.
@@ -36,3 +36,4 @@ return new class extends Migration
         Schema::dropIfExists('usuarios');
     }
 };
+

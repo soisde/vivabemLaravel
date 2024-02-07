@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\Administrativo;
+use App\Http\Controllers\Instrutor;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\loginController;
@@ -67,14 +69,19 @@ route::get('/noticia', [NoticiaController::class, 'index'])->name('noticia');
 
 // Route::get('/noticia', [NoticiaController::class'index'])->name('noticia');
 
-// Login
+// Login Essas linhas de código estão relacionadas à definição de rotas no Laravel para a funcionalidade de login.
 route::get('/login', [LoginController::class, 'index'])->name('login');
 route::post('/login', [LoginController::class, 'autenticar'])->name('login');
 
 // DASH
-//route::get('/dasboard/alunos', [AlunoController::class, 'index'])->name('dasboard.alunos');
-//route::get('/dasboard/administrativo', [Administrativo::class, 'index'])->name('dasboard.administrativo');
-//route::get('/dasboard/instrutor', [Instrutor::class, 'index'])->name('dasboard.instrutor');
+route::get('/dashboard/alunos', [AlunoController::class, 'index'])->name('dashboard.alunos');
+route::get('/dashboard/administrativo', [Administrativo::class, 'index'])->name('dashboard.administrativo');
+route::get('/dashboard/instrutor', [Instrutor::class, 'index'])->name('dashboard.instrutor');
+
+route::get('/sair', function(){
+    session()->flush();
+    return redirect('/');
+})->name('sair');
 
 // Route::get('/sobre', 'SobreController@index');
 // Route::get('/modalidade', 'ModalidadeController@index');

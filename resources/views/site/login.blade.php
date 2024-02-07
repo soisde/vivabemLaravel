@@ -29,6 +29,8 @@
       <label for="inputEmail" class="sr-only">Email </label>
       <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
       {{ $errors->has('email') ? $errors->first('email') : '' }}
+      {{--  Esta expressão verifica se existem erros associados ao campo 'email' no formulário. A variável  --}}
+
       <label for="inputPassword" class="sr-only">Senha</label>
       <input type="password"  name="password" class="form-control" placeholder="Senha" value="{{ old('password') }}" >
       {{ $errors->has('password') ? $errors->first('password') : '' }}
