@@ -9,6 +9,6 @@ class AlunoController extends Controller
     public function index()
     {
 
-        return view('site.dashboard.aluno.index');
+        return view('dashboard.aluno.index');
     }
 }

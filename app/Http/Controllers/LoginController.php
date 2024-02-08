@@ -50,31 +50,35 @@ class LoginController extends Controller
         //dd($usuario);
 
         $tipoUsuario = $usuario->tipo_usuario;
-
-    
-
+   
 if ($tipoUsuario instanceof Aluno) {
+    $tipo = 'aluno';
     session([
         'id'            => $tipoUsuario->idAluno,
         'nome'          => $tipoUsuario->nomeAluno,
+        'email'         => $usuario->email,
         'tipo_usuario'  => 'Aluno',
     ]);
 
     return redirect()->route('dashboard.alunos');
 
 } elseif ($tipoUsuario instanceof Funcionario) {
+    $tipo = 'administrativo';
     if ($tipoUsuario->tipoFuncionario == 'administrativo') {
         session([
             'id'               => $tipoUsuario->idFuncionario,
             'nome'             => $tipoUsuario->nomeFuncionario,
+            'email'            => $usuario->email,
             'tipo_usuario'     => $tipoUsuario->tipoFuncionario,
         ]);
         return redirect()->route('dashboard.administrativo'); // redireciona para a página principal do administrador
 
     } elseif ($tipoUsuario->tipoFuncionario == 'instrutor') {
+        $tipo = 'instrutor';
         session([
             'id'               => $tipoUsuario->idFuncionario,
             'nome'             => $tipoUsuario->nomeFuncionario,
+            'email'            => $usuario->email,
             'tipo_usuario'     => $tipoUsuario->tipoFuncionario,
         ]);
         return redirect()->route('dashboard.instrutor'); // redireciona para a página principal do instrutor

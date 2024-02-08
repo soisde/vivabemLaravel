@@ -10,6 +10,8 @@ use App\Http\Controllers\MusculacaoController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\TreinoController;
+use App\Http\Middleware\AutAcademiaMiddle;
+use App\Http\Middleware\LogAcessoAcademia;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,12 +43,15 @@ Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 Route::get('/treino', [TreinoController::class, 'index'])->name('treino');
 
 
+//route::middleware(LogAcessoAcademia::class)->get('/contato',[ContatoController::class,'index'])->name('contato');
 
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
-Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])->name('contato.enviar');
+Route::post('/contato/enviar', [ContatoController::class, 'salvarNoBanco'])
+->name('contato.enviar');
 
-Route::post('/contato/enviarnew', [ContatoController::class, 'salvarEmail'])->name('contato.enviarnew');
+Route::post('/contato/enviarnew', [ContatoController::class, 'salvarEmail'])
+->name('contato.enviarnew');
 
 
 
@@ -74,9 +79,24 @@ route::get('/login', [LoginController::class, 'index'])->name('login');
 route::post('/login', [LoginController::class, 'autenticar'])->name('login');
 
 // DASH
+route::middleware(['autenticacao:aluno'])->group(function (){
+
 route::get('/dashboard/alunos', [AlunoController::class, 'index'])->name('dashboard.alunos');
-route::get('/dashboard/administrativo', [Administrativo::class, 'index'])->name('dashboard.administrativo');
-route::get('/dashboard/instrutor', [Instrutor::class, 'index'])->name('dashboard.instrutor');
+
+});
+
+route::middleware(['autenticacao:administrativo'])->group(function (){
+
+    route::get('/dashboard/administrativo', [Administrativo::class, 'index'])->name('dashboard.administrativo');
+
+    });
+
+    route::middleware(['autenticacao:instrutor'])->group(function (){
+
+        route::get('/dashboard/instrutor', [Instrutor::class, 'index'])->name('dashboard.instrutor');
+
+        });
+
 
 route::get('/sair', function(){
     session()->flush();

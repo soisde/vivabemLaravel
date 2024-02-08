@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('idAluno');
             $table->string('nomeAluno', 255);
             $table->date('dataNascimento')->nullable();
+            $table->string('email', 255)->unique();
             $table->string('foneAluno', 20)->nullable();
             $table->string('enderecoAluno', 255)->nullable();
             $table->string('cidadeAluno', 100)->nullable();

@@ -8,6 +8,6 @@ class Administrativo extends Controller
 {
     public function index()
     {
-        return view('site.dashboard.administrativo.index');
+        return view('dashboard.administrativo.index');
     }
 }

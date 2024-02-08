@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('idFuncionario');
             $table->string('nomeFuncionario', 255);
             $table->date('dataNascimento');
+            $table->string('email', 255)->unique();
             $table->char('foneFuncionario', 20)->nullable();
             $table->string('enderecoFuncionario', 255)->nullable();
             $table->string('cidadeFuncionario', 100)->nullable();
